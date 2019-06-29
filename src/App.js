@@ -8,7 +8,7 @@ class App extends Component {
 
                <div class="jumbotron">
 
-                  <h1 class="display-4">Amazing React, Babel, Bootstrap and Webpack</h1>
+                  <h1 class="display-4">Amazing React, Redux, Babel, Bootstrap and Webpack</h1>
 
                   <p class="lead">Created with love</p>
 
