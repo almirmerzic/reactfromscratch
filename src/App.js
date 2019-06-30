@@ -24,13 +24,17 @@ const App = ({todoReducer}) => {
    );
 }
 
-const mapStateToProps = (state) => ({
-   todoReducer: state.todos
-})
+const mapStateToProps = (state) => {
+   console.log(state);
+   return{
+      todoReducer: state.todos
+   }
+}
 
-const mapDispatchToAction = (dispatch) => ({
-
-      addTodo: (todo) => dispatch(addTodo(todo)),
-});
+const mapDispatchToAction = (dispatch) => {
+   return{
+      addTodo: (todo) => dispatch(addTodo(todo))
+   }
+};
 
 export default connect(mapStateToProps, mapDispatchToAction)(App);
