@@ -11,7 +11,7 @@ const App = ({todoReducer}) => {
          <div>
             <div className="jumbotron">
                <Text />
-               <h1 className="text-center display-4">Add Todo</h1>
+               <h1 className="text-center display-4">Add Todos</h1>
                <AddTodo
                   addTodo={addTodo}
                />
