@@ -23,11 +23,11 @@ module.exports = {
          },
          {
             test: /\.css$/,
-            use: [ 'style-loader', 'css-loader' ]
-        }
+            use: ['style-loader', 'css-loader']
+         }
       ]
    },
-   plugins:[
+   plugins: [
       new HtmlWebpackPlugin({
          template: './src/index.html'
       })

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
@@ -10,15 +10,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Import component 
 import App from './App.js';
 // Import reducers
-import reducer from './reducers/reducers'
+import todoapp from './reducers/reducers'
 
 // Create store
-let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+var store = createStore(todoapp,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 import * as serviceWorker from './serviceWorker';
+let rootElement = document.getElementById('app')
 
-ReactDOM.render(<Provider store = {store}><App /></Provider>, document.getElementById('app'));
+render(
+    <Provider store = {store}>
+       <App />
+    </Provider>,
+     
+    rootElement
+ )
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

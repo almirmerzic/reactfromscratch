@@ -16,7 +16,7 @@ function todos(state = initialState, action) {
          return state
    }
 }
-const reducer = combineReducers({
+const todoapp = combineReducers({
    todos
 })
-export default reducer
+export default todoapp
