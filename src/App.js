@@ -1,34 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux'
+import AddTodo from './components/AddTodo/index';
+import ShowTodo from './components/ShowTodo/index';
+import Text from './components/Text/index';
+import { addTodo } from './actions/actions';
 
-class App extends Component {
-   render() {
-      return (
-         <div class="container">
-            <div>
-
-               <div class="jumbotron">
-
-                  <h1 class="display-4">Amazing React, Redux, Babel, Bootstrap and Webpack</h1>
-
-                  <p class="lead">Created with love</p>
-
-                  <hr class="my-4" />
-
-                  <p>It uses utility classes for typography and spacing to space content out
-                  
-                     the larger container.</p>
-
-                  <p class="lead">
-
-                     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-
-                  </p>
-
-               </div>
-
+const App = ({ todoReducer }) => {
+   return (
+      <div className="container">
+         <div>
+            <div className="jumbotron">
+               <Text />
+               <h1 className="text-center display-4">Add Todo</h1>
+               <AddTodo
+                  addTodo={addTodo}
+               />
+               <ShowTodo
+                  todos={todoReducer.todos}
+               />
             </div>
          </div>
-      );
-   } 
+      </div>
+   );
 }
-export default App;
+
+const mapStateToProps = (state) => {
+   return {
+      todoReducer: state.todos
+   };
+};
+
+const mapDispatchToProps = (dispatch) => {
+   return {
+      addTodo: (todo) => dispatch(addTodo(todo)),
+   };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
