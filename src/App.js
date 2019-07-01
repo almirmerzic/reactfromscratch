@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import AddTodo from './components/AddTodo/index';
 import ShowTodo from './components/ShowTodo/index';
 import Text from './components/Text/index';
-import { addTodo } from './actions/actions';
+import { addTodo } from './actions';
 
-const App = ({todoReducer}) => {
+const App = ({todoReducer, addTodo}) => {
    return (
       <div className="container">
          <div>
@@ -25,7 +25,6 @@ const App = ({todoReducer}) => {
 }
 
 const mapStateToProps = (state) => {
-   console.log(state);
    return{
       todoReducer: state.todos
    }

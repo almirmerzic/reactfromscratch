@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button/index';
+import Input from '../Input/index';
 
 class AddTodo extends React.Component {
 
@@ -12,15 +13,15 @@ class AddTodo extends React.Component {
     sendTodo = () => {
         if (this.state.todo.length > 0)
             this.props.addTodo(this.state.todo);
+            this.setState({todo: ''});
     }
 
     render() {
         return (
             <form>
                 <div className="form-group">
-                    <input
+                    <Input
                         type="text"
-                        className="form-control"
                         placeholder="...Todo"
                         value={this.state.todo}
                         onChange={this.getTodo}
@@ -28,6 +29,7 @@ class AddTodo extends React.Component {
                 </div>
 
                 <Button
+                    type="button"
                     name="Add Todo"
                     sendTodo={this.sendTodo}
                 />

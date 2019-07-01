@@ -1,7 +1,8 @@
 import React from 'react';
-import {render} from 'react-dom';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import * as serviceWorker from './serviceWorker';
 
 // Import custom css
 import './index.css';
@@ -9,14 +10,11 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Import component 
 import App from './App.js';
-// Import reducers
-import todoapp from './reducers/reducers'
+// Import reducer
+import reducer from './reducers'
 
 // Create store
-var store = createStore(todoapp,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
-
-import * as serviceWorker from './serviceWorker';
+let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 let rootElement = document.getElementById('app')
 
 render(
