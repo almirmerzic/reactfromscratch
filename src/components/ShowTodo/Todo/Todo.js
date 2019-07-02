@@ -5,7 +5,7 @@ const Todo = ({id, todovalue, removeTodo }) => {
     return (
         <tbody>
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{id}</th>
                 <td>{todovalue}</td>
                 <td>
                     <Button

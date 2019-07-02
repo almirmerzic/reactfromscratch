@@ -6,7 +6,7 @@ const ShowTodo = ({ todos, removeTodo }) => {
         <table className="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Todo</th>
                     <th scrope="col">Remove Todo</th>
                 </tr>
