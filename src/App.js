@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import AddTodo from './components/AddTodo/index';
 import ShowTodo from './components/ShowTodo/index';
 import Text from './components/Text/index';
-import { addTodo } from './actions';
+import { addTodo, removeTodo} from './actions';
 
-const App = ({todoReducer, addTodo}) => {
+const App = ({todoReducer, addTodo, removeTodo}) => {
    return (
       <div className="container">
          <div>
@@ -17,6 +17,7 @@ const App = ({todoReducer, addTodo}) => {
                />
                <ShowTodo
                   todos={todoReducer.todos}
+                  removeTodo={removeTodo}
                />
             </div>
          </div>
@@ -32,7 +33,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToAction = (dispatch) => {
    return{
-      addTodo: (todo) => dispatch(addTodo(todo))
+      addTodo: (todo) => dispatch(addTodo(todo)),
+      removeTodo: (id) =>dispatch(removeTodo(id))
    }
 };
 

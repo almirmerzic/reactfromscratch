@@ -31,7 +31,7 @@ class AddTodo extends React.Component {
                 <Button
                     type="button"
                     name="Add Todo"
-                    sendTodo={this.sendTodo}
+                    param={this.sendTodo}
                 />
             </form>
         );
