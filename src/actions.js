@@ -1,18 +1,13 @@
-export const ADD_TODO = 'ADD_TODO';
-export const REMOVE_TODO ='REMOVE_TODO';
+import {ADD_TODO, REMOVE_TODO} from './constants';
 
 let id = 0;
 
-export function addTodo(todo) {
-   return {
+export const addTodo = (todo) => ({
       type: ADD_TODO,
       todos: {todo , id: id++}
-   };
-}
+});
 
-export function removeTodo(id) {
-   return {
+export const removeTodo = (id) => ({
       type: REMOVE_TODO,
       id
-   };
-}
+});

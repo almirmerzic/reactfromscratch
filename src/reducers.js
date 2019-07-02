@@ -1,15 +1,11 @@
-import { combineReducers } from 'redux';
-
-import {
-    ADD_TODO,
-    REMOVE_TODO,
-} from './actions';
+import { ADD_TODO, REMOVE_TODO } from './constants';
 
 const initialState = {
     todos: []
 }
 
 function todos(state = initialState, action) {
+
     switch (action.type) {
         case ADD_TODO:
             return {
@@ -19,16 +15,13 @@ function todos(state = initialState, action) {
         case REMOVE_TODO:
             return {
                 ...state,
-                todos: state.todos.filter(todo =>todo.id !== action.id)
+                todos: state.todos.filter(todo => todo.id !== action.id)
             }
         default:
             return state
     }
+
 }
 
-const reducer = combineReducers({
-    todos
-})
-
-export default reducer;
+export default todos;
 

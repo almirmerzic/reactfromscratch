@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Import component 
 import App from './App.js';
 // Import reducer
-import reducer from './reducers'
+import reducer from './combineReducers'
 
 // Create store
 let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
